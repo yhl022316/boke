@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static',filename='tb.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
     <title>{{ name }}'boke</title>
 </head>
 <body>
+    <img  class="avatar" src="{{url_for('static',filename='images/tx.jpg')}}" alt="头像">
+
     <h2>{{ name }}'boke</h2>
     {#使用length过滤器获取boke变量的长度#}
     <p>{{boke|length}}titles</p>
-    <ul>
+    <ul class="boke-list">
         {% for  boke in boke%}
         <li>{{boke.title }} - {{boke.type}}</li>
         {% endfor%}
@@ -17,6 +21,7 @@
     <footer>
         <small>&copy;2020 <a href="http://www.HaoLinBK.com">博客杨</a></small>
     </footer>
+    <img src="{{url_for('static',filename='bk.png')}}" alt="">
 
 
     
